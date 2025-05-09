@@ -1,0 +1,39 @@
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(227, 227, 227);
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: rgb(225, 225, 225);
+}
+
+.squareX {
+  position: relative;
+  border: none;
+  background-color: transparent;
+}
+
+.squareX::after,
+.squareX::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 6px;
+  height: 60px;
+  background-color: rgb(176, 176, 176);
+  border-radius: 16px;
+  rotate: 45deg;
+}
+
+.squareX::before {
+  rotate: -45deg;
+}
