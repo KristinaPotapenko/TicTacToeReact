@@ -1,4 +1,4 @@
-import { Square } from "./component/Square";
+import { Square } from "./component/square/Square";
 
 function App() {
   return (
