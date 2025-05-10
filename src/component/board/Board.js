@@ -4,20 +4,22 @@ import style from "./board.module.css";
 export const Board = () => {
   return (
     <>
-      <div className={style.boardRow}>
-        <Square />
-        <Square />
-        <Square />
-      </div>
-      <div className={style.boardRow}>
-        <Square />
-        <Square />
-        <Square />
-      </div>
-      <div className={style.boardRow}>
-        <Square />
-        <Square />
-        <Square />
+      <div className={style.board}>
+        <div className={style.boardRow}>
+          <Square />
+          <Square />
+          <Square />
+        </div>
+        <div className={style.boardRow}>
+          <Square />
+          <Square />
+          <Square />
+        </div>
+        <div className={style.boardRow}>
+          <Square />
+          <Square />
+          <Square />
+        </div>
       </div>
     </>
   );

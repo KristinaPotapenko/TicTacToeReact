@@ -14,10 +14,14 @@
   background-color: rgb(225, 225, 225);
 }
 
-.squareX {
-  position: relative;
+.squareButton {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.squareX {
+  position: relative;
 }
 
 .squareX::after,
@@ -37,4 +41,11 @@
 
 .squareX::before {
   rotate: -45deg;
+}
+
+.squareO {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgb(176, 176, 176);
+  border-radius: 100%;
 }
