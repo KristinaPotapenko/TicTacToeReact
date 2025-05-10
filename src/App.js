@@ -1,9 +1,9 @@
-import { Square } from "./component/square/Square";
+import { Board } from "./component/board/Board";
 
 function App() {
   return (
-    <div>
-      <Square />
+    <div className="app">
+      <Board />
     </div>
   );
 }

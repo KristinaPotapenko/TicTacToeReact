@@ -1,0 +1,35 @@
+.boardRow {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.boardRow:not(:nth-child(3)):after,
+.boardRow:not(:nth-child(3)):before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: calc(100px + 12px);
+  width: 2px;
+  height: calc(100px * 3 + 44px);
+  background-color: rgb(176, 176, 176);
+  border-radius: 16px;
+}
+
+.boardRow:nth-child(2)::after {
+  top: -120%;
+  left: calc((100px + 12px) * 2 + 12px);
+}
+
+.boardRow:nth-child(1):before,
+.boardRow:nth-child(2):before {
+  top: -60%;
+  left: 50%;
+  rotate: 90deg;
+}
+
+.boardRow:last-child {
+  margin-bottom: 0;
+}
