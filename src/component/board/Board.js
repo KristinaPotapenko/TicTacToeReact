@@ -4,14 +4,7 @@ import style from "./board.module.css";
 
 export const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
-
-  const handleClick = (squareIndex) => {
-    if (squares[squareIndex]) return;
-
-    const copySquares = squares.slice();
-    copySquares[squareIndex] = "x";
-    setSquares(copySquares);
-  };
+  const [xIsNext, seXIsNext] = useState(true);
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -47,8 +40,33 @@ export const Board = () => {
     return null;
   };
 
+  const handleClick = (squareIndex) => {
+    if (squares[squareIndex] || calculateWinner(squares)) return;
+
+    const copySquares = squares.slice();
+
+    if (xIsNext) {
+      copySquares[squareIndex] = "x";
+    } else {
+      copySquares[squareIndex] = "o";
+    }
+
+    seXIsNext(!xIsNext);
+    setSquares(copySquares);
+  };
+
+  const winner = calculateWinner(squares);
+  let status;
+
+  if (winner) {
+    status = "Winner: " + winner;
+  } else {
+    status = xIsNext ? "Next player: x" : "Next player: o";
+  }
+
   return (
     <>
+      <h1>{status}</h1>
       <div className={style.board}>
         <div className={style.boardRow}>
           <Square
